@@ -1,3 +1,5 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,6 +15,20 @@
     --foreground: #ededed;
   }
 }
+
+@keyframes colorChange {
+  0% {
+    color: black;
+  }
+  100% {
+    color: #ef4444; 
+  }
+}
+
+.animate-color-change {
+  animation: colorChange 3s infinite alternate;
+}
+
 
 body {
   color: var(--foreground);
