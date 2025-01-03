@@ -41,53 +41,52 @@ const CommentSection = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl p-5 sm:p-8 text-left">
+    <div className="w-full max-w-3xl p-4 sm:p-6 md:p-8 mx-auto text-left">
       <h2 className="text-2xl font-semibold mb-4">Comment Below:</h2>
 
-      <div className="mb-4 flex items-center space-x-6 w-full">
+      <div className="mb-4 flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-4 sm:space-y-0 w-full">
         <input
           type="text"
           placeholder="Your name"
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
-          className="p-2 w-auto max-w-full sm:w-1/3 border rounded-md"
+          className="p-2 w-full sm:w-1/3 border rounded-md"
         />
-        <br />
         <input
           type="text"
           placeholder="Write a comment..."
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
-          className="p-2 w-auto max-w-full sm:w-2/3 border rounded-md"
+          className="p-2 w-full sm:w-2/3 border rounded-md"
         />
         <button
           onClick={handleAddComment}
-          className="p-2 bg-blue-500 text-white rounded-md"
+          className="p-2 bg-blue-500 text-white rounded-md w-full sm:w-auto"
         >
           Submit
         </button>
       </div>
 
       {comments.length === 0 ? (
-        <p>No comments yet.</p>
+        <p className="text-center text-gray-500">No comments yet.</p>
       ) : (
         <ul className="space-y-4">
           {comments.map((commentObj, index) => (
             <li
               key={index}
-              className="p-4 border border-gray-300 rounded-md shadow-sm w-auto max-w-full"
+              className="p-4 border border-gray-300 rounded-md shadow-sm w-full"
             >
               {isEditing === index ? (
-                <div className="flex space-x-2 w-full">
+                <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0">
                   <input
                     type="text"
                     value={editComment}
                     onChange={(e) => setEditComment(e.target.value)}
-                    className="p-2 w-auto max-w-full sm:w-4/5 border rounded-md"
+                    className="p-2 w-full sm:w-4/5 border rounded-md"
                   />
                   <button
                     onClick={() => handleSaveEdit(index)}
-                    className="p-2 bg-green-500 text-white rounded-md"
+                    className="p-2 bg-green-500 text-white rounded-md w-full sm:w-auto"
                   >
                     Save
                   </button>

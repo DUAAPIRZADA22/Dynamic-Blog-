@@ -4,7 +4,7 @@ const Feature = () => {
   return (
     <div className="relative h-screen mt-8">
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
         autoPlay
         loop
         muted
@@ -24,4 +24,5 @@ const Feature = () => {
 };
 
 export default Feature;
+
 

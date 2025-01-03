@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between px-4 py-3 shadow-md bg-orange-100">
+    <nav className="relative z-50 flex items-center justify-between px-4 py-3 shadow-md bg-orange-100">
       <div className="flex items-center font-Pacifico text-3xl font-extrabold text-gray-800">
         Journey Tales
       </div>
@@ -47,27 +47,27 @@ export default function Navbar() {
         <span className="block w-6 h-0.5 bg-black"></span>
       </button>
       {isOpen && (
-        <div className="absolute top-16 right-4 bg-white shadow-lg rounded-lg w-40 md:hidden">
+        <div className="absolute top-16 right-4 bg-orange-100 shadow-lg rounded-lg w-40 md:hidden z-50">
           <Link
-            href="#home"
+            href="/"
             className="block px-4 py-2 text-center text-light-red-500 hover:text-red-500 hover:underline font-bold"
           >
             Home
           </Link>
           <Link
-            href="#about"
+            href="/about"
             className="block px-4 py-2 text-center text-light-red-500 hover:text-red-500 hover:underline font-bold"
           >
             About
           </Link>
           <Link
-            href="#blog"
+            href="/blog"
             className="block px-4 py-2 text-center text-light-red-500 hover:text-red-500 hover:underline font-bold"
           >
             Blog
           </Link>
           <Link
-            href="#contact"
+            href="/contact"
             className="block px-4 py-2 text-center text-light-red-500 hover:text-red-500 hover:underline font-bold"
           >
             Contact
@@ -77,3 +77,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
